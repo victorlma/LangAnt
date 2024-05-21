@@ -13,7 +13,7 @@ typedef enum {
     DIRECTIONS
 } DIRECTION;
 
-Vector2 dirVectors[] = 
+Vector2 dirVectors[] =
 {
         [UP] = (Vector2) {0, -1},
         [RIGHT] = (Vector2) {1, 0},
@@ -135,9 +135,9 @@ void drawAnts(Ant *ants, int n)
             .x = ants[i].pos.x * st.sqrsize,
             .y = ants[i].pos.y * st.sqrsize,
         };
-        DrawRectangleV(antRec, 
-                           (Vector2) {st.sqrsize, st.sqrsize}, 
-                        st.antcolor);
+        DrawRectangleV(antRec,
+                       (Vector2) {st.sqrsize, st.sqrsize},
+                       st.antcolor);
 
     }
 }
@@ -153,7 +153,7 @@ void drawGrid(Grid *grid)
                 .x = x * st.sqrsize,
                 .y = y * st.sqrsize,
             };
-        
+
             if (color) {
                 DrawRectangleV(gridrec, (Vector2) {st.sqrsize, st.sqrsize}, GetColor(color));
             }
@@ -169,21 +169,28 @@ int main(void)
 {
 
 st = (State) {
-        .defbgc = GRAY,
+        .defbgc = GetColor(0xEEEEEEFF),
         .deffgc = BLACK,
         .antcolor = RED,
 
         .grid.dimen = 50,
         .sqrsize = 10,
-        .antsnum = 1,
+        .antsnum = 2,
 
-        .startpos = (Vector2) {290, 50},
+        .startpos = (Vector2) {25, 25},
     };
 
     st.ants[0]  = (Ant) {
         .active = 0,
         .direction = DOWN,
-        .fgcolor = st.deffgc,
+        .fgcolor = GetColor(0xAA228AFF),
+        .pos = st.startpos
+    };
+
+    st.ants[1]  = (Ant) {
+        .active = 0,
+        .direction = UP,
+        .fgcolor = GetColor(0x22AA8AFF),
         .pos = st.startpos
     };
 
