@@ -5,12 +5,12 @@ with raylib.
 
 ## Current State
 
-Basic Implementation
+- Basic Implementation
+- Multiple Ants
+- Multiple Colors
 
 ## Future Features
 
-- Multiple Ants
-- Multiple Colors
 - Step history
 - GUI to control parameters
 - Export specific Pattern to image file (maybe PNG) with or without the ant
